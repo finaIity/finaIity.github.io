@@ -1,0 +1,154 @@
+body {
+    font-family: 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #0b030ff1;/* dark violet */
+    color: #c8c8c8;/* changed text to a lighter white */
+}
+nav {
+    color: #B3E3C1;
+}
+
+.repositories {
+    color: #B3E3C1;
+}
+
+body::before {
+    content: "present day, present time";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('http://wallup.net/wp-content/uploads/2017/11/17/216534-Serial_Experiments_Lain.jpg') no-repeat center center/cover;
+    transform: scaleX(-1);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+header {
+    background: #0b030f;
+    color: #c8c8c8;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+header .info h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .info p {
+    margin: 5px 0 0;
+}
+
+.info {
+    flex: 1;
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 45px ;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    /* Position personal info */
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -65px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 25px 0;
+}
+
+nav ul li a {
+    color: #B3E3C1;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav a:hover {
+    text-decoration: dotted underline;
+}
+
+.repositories {
+    flex: 1;
+    text-align: left;
+    padding: 5px;
+    margin-top: -35px;
+    margin-bottom: 0px;
+    margin-right: 650px;
+}
+
+.repositories h2 {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.repositories ul {
+    text-decoration: underline;
+    list-style: none;
+    padding: 0;
+}
+
+.repositories ul li {
+    margin-top: -10px;
+    line-height: 2.6;
+}
+
+.repositories ul li a {
+    color: #B3E3C1;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.repositories ul li a:hover {
+    text-decoration: dotted underline;
+}
+
+.spotify-embed {
+    border-radius: 12px;
+    width: 25%;
+    max-width: 600%;
+    margin: 0 auto;
+    padding: 45px;
+    margin-top: -239px;
+    margin-left: 390px;
+    align-self: flex-start;
+}
+
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
