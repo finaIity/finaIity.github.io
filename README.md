@@ -1,2 +1,3 @@
-# finaIity.github.io
-wesbtie!!!
+# personal website
+
+access thru [here](finaIity.github.io)

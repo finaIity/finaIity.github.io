@@ -2,7 +2,7 @@ body {
     font-family: 'Source Code Pro', monospace;
     margin: 0;
     padding: 0;
-    background-color: #0b030ff1;/* dark violet */
+    background-color: #000000;
     color: #c8c8c8;/* changed text to a lighter white */
 }
 nav {
@@ -27,7 +27,7 @@ body::before {
 }
 
 header {
-    background: #0b030f;
+    background: #000000;
     color: #c8c8c8;
     padding: 20px 0;
     text-align: center;
@@ -133,7 +133,7 @@ nav a:hover {
 }
 
 footer {
-    background: #35424a;
+    background: #000000;
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
