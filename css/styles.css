@@ -20,7 +20,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('http://wallup.net/wp-content/uploads/2017/11/17/216534-Serial_Experiments_Lain.jpg') no-repeat center center/cover;
+    background: #000000;
     transform: scaleX(-1);
     opacity: 0.1;
     z-index: -1;
@@ -130,17 +130,6 @@ nav a:hover {
 
 .repositories ul li a:hover {
     text-decoration: dotted underline;
-}
-
-.spotify-embed {
-    border-radius: 12px;
-    width: 25%;
-    max-width: 600%;
-    margin: 0 auto;
-    padding: 45px;
-    margin-top: -239px;
-    margin-left: 390px;
-    align-self: flex-start;
 }
 
 footer {
