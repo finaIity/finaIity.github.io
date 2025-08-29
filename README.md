@@ -1,3 +1,3 @@
 # personal website
 
-access thru [here](finaIity.github.io)
+access thru [here](https://finaIity.github.io)
