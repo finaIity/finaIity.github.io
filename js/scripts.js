@@ -6,14 +6,27 @@ document.addEventListener("DOMContentLoaded", function() {
         // Store the original text
         const originalText = whoamiText.textContent;
         
-        // Change text on mouseover
+        // For desktop - Change text on mouseover
         whoamiText.addEventListener("mouseover", function() {
             this.textContent = "j1ru";
         });
         
-        // Restore original text on mouseout
+        // For desktop - Restore original text on mouseout
         whoamiText.addEventListener("mouseout", function() {
             this.textContent = originalText;
         });
+        
+        // For mobile - Toggle text on touch
+        let isTouched = false;
+        whoamiText.addEventListener("touchstart", function(e) {
+            e.preventDefault(); // Prevent default touch behavior
+            if (!isTouched) {
+                this.textContent = "j1ru";
+                isTouched = true;
+            } else {
+                this.textContent = originalText;
+                isTouched = false;
+            }
+        }, false);
     }
 });

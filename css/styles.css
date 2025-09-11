@@ -4,6 +4,11 @@ body {
     padding: 0;
     background-color: #000000;
     color: #c8c8c8;/* changed text to a lighter white */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 nav {
     color: #B3E3C1;
@@ -59,7 +64,10 @@ header .info p {
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    padding: 45px ;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .main-content {
@@ -74,23 +82,26 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: -65px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 25px 0;
+    margin: 10px 20px 10px 0;
 }
 
 nav ul li a {
     color: #B3E3C1;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 nav a:hover {
@@ -101,9 +112,10 @@ nav a:hover {
     flex: 1;
     text-align: left;
     padding: 5px;
-    margin-top: -35px;
-    margin-bottom: 0px;
-    margin-right: 650px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .repositories h2 {
@@ -118,8 +130,8 @@ nav a:hover {
 }
 
 .repositories ul li {
-    margin-top: -10px;
-    line-height: 2.6;
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
 .repositories ul li a {
@@ -140,4 +152,49 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .info h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .repositories ul li a, nav ul li a {
+        font-size: 16px;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .info h1 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .repositories ul li a, nav ul li a {
+        font-size: 14px;
+    }
+    
+    nav ul li {
+        margin: 8px 15px 8px 0;
+    }
+    
+    .repositories ul li {
+        margin: 5px 0;
+        line-height: 1.4;
+    }
 }
