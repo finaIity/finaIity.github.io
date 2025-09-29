@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // For desktop - Change text on mouseover
         whoamiText.addEventListener("mouseover", function() {
-            this.textContent = "j1ru";
+            this.textContent = "gianni";
         });
         
         // For desktop - Restore original text on mouseout
