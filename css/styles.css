@@ -57,6 +57,7 @@ header .info p {
 .info {
     flex: 1;
     text-align: left;
+    width: 100%;
 }
 
 .container {
@@ -111,11 +112,7 @@ nav a:hover {
 .repositories {
     flex: 1;
     text-align: left;
-    padding: 5px;
-    margin-top: 10px;
-    margin-bottom: 20px;
     width: 100%;
-    max-width: 800px;
 }
 
 .repositories h2 {
@@ -124,7 +121,7 @@ nav a:hover {
 }
 
 .repositories ul {
-    text-decoration: underline;
+    text-decoration: dotted underline;
     list-style: none;
     padding: 0;
 }
