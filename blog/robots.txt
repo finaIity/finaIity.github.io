@@ -1,0 +1,11 @@
+# robots.txt for vanished playlists & perfumes
+# Exclude template pages from search engines
+
+User-agent: *
+
+# Disallow template pages (not visible publicly, used as reference only)
+Disallow: /blog/perfumes/_template-perfume/
+Disallow: /blog/playlists/_template-playlist/
+
+# Allow everything else
+Allow: /
