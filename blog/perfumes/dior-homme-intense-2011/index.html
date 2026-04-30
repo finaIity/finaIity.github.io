@@ -2,19 +2,45 @@
       // Set theme ASAP so navigation doesn't flash/reset.
       (() => {
         const storageKey = 'vp-theme';
+        const cookieKey = 'vp-theme';
+
+        const readCookie = (key) => {
+          try {
+            const parts = document.cookie.split('; ');
+            for (const part of parts) {
+              const idx = part.indexOf('=');
+              if (idx === -1) continue;
+              const k = part.slice(0, idx);
+              if (k !== key) continue;
+              return decodeURIComponent(part.slice(idx + 1));
+            }
+            return null;
+          } catch {
+            return null;
+          }
+        };
 
         try {
           const persisted = localStorage.getItem(storageKey);
+          const cookieTheme = readCookie(cookieKey);
           const prefersLight =
             typeof window !== 'undefined' &&
             typeof window.matchMedia === 'function' &&
             window.matchMedia('(prefers-color-scheme: light)').matches;
 
-          const theme = persisted === 'light' || persisted === 'dark' ? persisted : prefersLight ? 'light' : 'dark';
+          const theme =
+            persisted === 'light' || persisted === 'dark'
+              ? persisted
+              : cookieTheme === 'light' || cookieTheme === 'dark'
+                ? cookieTheme
+                : prefersLight
+                  ? 'light'
+                  : 'dark';
           document.documentElement.dataset.theme = theme;
         } catch {
-          // If storage is blocked/unavailable, fall back to default (dark).
-          document.documentElement.dataset.theme = 'dark';
+          // If storage is blocked/unavailable, fall back to cookie, then default (dark).
+          const cookieTheme = readCookie(cookieKey);
+          document.documentElement.dataset.theme = cookieTheme === 'light' || cookieTheme === 'dark' ? cookieTheme : 'dark';
         }
       })();
     </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"><meta name="generator" content="Astro v6.0.7"><title>:3 Dior Homme Intense 2011</title><link rel="stylesheet" href="/blog/_astro/BaseLayout.Bm2rwtVv.css"></head> <body class="flex flex-col min-h-screen"> <div class="flex flex-col flex-1 bg-[var(--color-bg-primary)] overflow-x-hidden"> <!-- Theme toggle (top-right) --> <div class="theme-toggle fixed top-4 right-4 sm:right-6 lg:right-8 z-50"> <!-- Mobile: compact token (avoids header overlap) --> <button type="button" class="theme-compact sm:hidden" data-toggle aria-label="Toggle theme"> <span class="theme-compact-label">THEME:</span> <span class="theme-compact-cursor" aria-hidden="true">_</span> </button> <!-- sm+: full ASCII bracket switch --> <div class="hidden sm:flex items-center gap-2 text-sm font-mono text-[var(--color-text-tertiary)] tracking-wider"> <button type="button" class="theme-choice hover:text-[var(--color-text-primary)] transition-colors" data-choice="dark" aria-label="Switch to dark theme" aria-pressed="false"> <span class="theme-bracket" aria-hidden="true">[</span> <span class="theme-label">DARK</span> <span class="theme-bracket" aria-hidden="true">]</span> </button> <span aria-hidden="true"></span> <button type="button" class="theme-choice hover:text-[var(--color-text-primary)] transition-colors" data-choice="light" aria-label="Switch to light theme" aria-pressed="false"> <span class="theme-bracket" aria-hidden="true">[</span> <span class="theme-label">LIGHT</span> <span class="theme-bracket" aria-hidden="true">]</span> </button> </div> </div> <!-- Main content --> <main class="pt-16 sm:pt-20 lg:pt-24 pl-12 sm:pl-24 lg:pl-64 flex-1">  <article class="max-w-4xl pr-4 sm:pr-6 lg:pr-8 py-16"> <!-- Header --> <header class="mb-12"> <div class="flex items-start justify-between mb-4"> <div> <p class="text-sm text-[var(--color-text-tertiary)] font-mono mb-2"> Dior | EDP | 2011 </p> <h1 class="text-4xl sm:text-5xl font-bold text-[var(--color-text-primary)] mb-2 font-mono"> Dior Homme Intense 2011 </h1> </div> <span class="text-sm text-[var(--color-text-tertiary)] font-mono">2026-04-17</span> </div> <!-- Ratings --> <div class="grid grid-cols-3 gap-6 mt-8"> <div class="space-y-2"> <p class="text-xs text-[var(--color-text-tertiary)] font-mono uppercase tracking-wider">longevity</p> <p class="text-3xl font-semibold text-[var(--color-accent-perfumes)] font-mono">9/10</p> <div class="h-px w-12 bg-gradient-to-r from-[var(--color-accent-perfumes)] to-transparent mt-3"></div> </div> <div class="space-y-2"> <p class="text-xs text-[var(--color-text-tertiary)] font-mono uppercase tracking-wider">projection</p> <p class="text-3xl font-semibold text-[var(--color-accent-perfumes)] font-mono">8/10</p> <div class="h-px w-12 bg-gradient-to-r from-[var(--color-accent-perfumes)] to-transparent mt-3"></div> </div> <div class="space-y-2"> <p class="text-xs text-[var(--color-text-tertiary)] font-mono uppercase tracking-wider">versatility</p> <p class="text-3xl font-semibold text-[var(--color-accent-perfumes)] font-mono">7/10</p> <div class="h-px w-12 bg-gradient-to-r from-[var(--color-accent-perfumes)] to-transparent mt-3"></div> </div> </div> </header> <!-- Notes Breakdown --> <section class="mb-12 pt-12 border-t border-[var(--color-border-subtle)]"> <h2 class="text-xl font-semibold text-[var(--color-accent-perfumes)] mb-8 font-mono">
@@ -30,9 +56,19 @@ scent profile
 </a> </div> </article>  </main> <!-- Footer --> <footer class="border-t border-[var(--color-border-subtle)] mt-auto pl-12 sm:pl-24 lg:pl-64"> <div class="max-w-7xl mx-auto pr-4 sm:pr-6 lg:pr-8 py-12"> <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-[var(--color-text-tertiary)]"> <div class="flex gap-6"> <a href="https://vanished.dev" class="hover:text-[var(--color-accent-primary)] transition-colors">← portfolio</a> <span>© 2026 vanished</span> </div> <div class="flex gap-6"> <a href="https://github.com/finaIity" class="hover:text-[var(--color-accent-primary)] transition-colors">github</a> <a href="https://open.spotify.com/user/chisanahasu/playlists" class="hover:text-[var(--color-accent-primary)] transition-colors">spotify</a> </div> </div> </div> </footer> </div> <script>
       (() => {
         const storageKey = 'vp-theme';
+        const cookieKey = 'vp-theme';
         const root = document.documentElement;
         const toggle = document.querySelector('.theme-toggle');
         if (!toggle) return;
+
+        const setCookie = (key, value) => {
+          try {
+            // 1 year, site-wide.
+            document.cookie = `${key}=${encodeURIComponent(value)}; Max-Age=31536000; Path=/; SameSite=Lax`;
+          } catch {
+            // Ignore if cookies are unavailable.
+          }
+        };
 
         const syncPressedState = (theme) => {
           toggle.querySelectorAll('[data-choice]').forEach((el) => {
@@ -49,6 +85,7 @@ scent profile
           } catch {
             // Ignore if storage is unavailable.
           }
+          setCookie(cookieKey, theme);
           syncPressedState(theme);
         };
 
